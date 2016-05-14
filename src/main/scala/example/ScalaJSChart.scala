@@ -5,7 +5,7 @@ import org.singlespaced.d3js.d3
 
 import scala.scalajs.js
 
-object ScalaJSExample extends js.JSApp {
+object ScalaJSChart extends js.JSApp {
 
   def main(): Unit = {
     /**
