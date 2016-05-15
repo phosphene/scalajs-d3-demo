@@ -9,6 +9,8 @@ object ScalaJSExampleTest extends TestSuite {
 
   def tests = TestSuite {
     'ScalaJSExample {
+      assert(svg)
+
     }
   }
 }
