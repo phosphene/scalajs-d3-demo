@@ -11,12 +11,15 @@ persistLauncher in Compile := true
 
 persistLauncher in Test := false
 
-testFrameworks += new TestFramework("utest.runner.Framework")
+
 
 libraryDependencies ++= Seq(
-    "org.scala-js" %%% "scalajs-dom" % "0.9.0",
-    "org.singlespaced" %%% "scalajs-d3" % "0.3.3",
-    "com.lihaoyi" %%% "utest" % "0.4.3" % "test"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.0",
+  "org.singlespaced" %%% "scalajs-d3" % "0.3.3",
+  "com.lihaoyi" %%% "utest" % "0.4.3" % "test"
 )
 
-
+// uTest settings
+testFrameworks += new TestFramework("utest.runner.Framework")
+// use phantomjs for tests because d3 lib uses not features not supported by rhino
+scalaJSUseRhino in Global := false
