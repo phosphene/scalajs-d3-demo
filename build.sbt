@@ -21,5 +21,5 @@ libraryDependencies ++= Seq(
 
 // uTest settings
 testFrameworks += new TestFramework("utest.runner.Framework")
-// use phantomjs for tests because d3 lib uses not features not supported by rhino
+// use phantomjs for tests because d3 lib uses features not supported by rhino
 scalaJSUseRhino in Global := false
