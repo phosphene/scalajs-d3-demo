@@ -25,6 +25,8 @@ object ScalaJSExampleTest extends TestSuite {
       sel.attr("tabindex", (d:Int) => d*2 )
 
       assert("10" == elem.getAttribute("tabindex"))
+
+
     }
   }
 }
