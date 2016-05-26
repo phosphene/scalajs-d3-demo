@@ -44,6 +44,6 @@ class BarChart {
       .attr("height", rectHeightFun)
       .style("fill", rectColorFun)
 
-    return (sel);
+    return (sel)
   }
 }
