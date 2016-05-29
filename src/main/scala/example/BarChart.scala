@@ -7,7 +7,7 @@ import scala.scalajs.js
 
 class BarChart {
 
-  def buildChart(myData: js.Array[Int]) : Object = {
+  def buildChart(myData: js.Array[Int], barData: Map[String, String] ) : Object = {
 
     val graphHeight = 450
 
