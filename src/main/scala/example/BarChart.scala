@@ -2,15 +2,18 @@ package example
 
 import org.singlespaced.d3js.Ops._
 import org.singlespaced.d3js.d3
-
 import scala.scalajs.js
+import js.JSConverters._
 
 class BarChart {
 
-  def buildChart(myData: js.Array[Int], barData: Map[String, String] ) : Object = {
+  def buildChart(myData: Seq[Int], barData: Map[String, String] ) : Object = {
+
+
+    // Seq to js.Array -- Copy to js.Array
+    val jsArray: js.Array[Int] = myData.toJSArray
 
     val graphHeight = 450
-
     //The width of each bar.
     val barWidth = 80
 
@@ -33,9 +36,9 @@ class BarChart {
     val rectYFun = (d: Int) => graphHeight - d * barHeightMultiplier
     val rectHeightFun = (d: Int) => d * barHeightMultiplier
     val rectColorFun = (d: Int, i: Int) => c.brighter(i * 0.5).toString
-
+    //here lies d3 reasoning
     val svg = d3.select("body").append("svg").attr("width", "100%").attr("height", "450px")
-    val sel = svg.selectAll("rect").data(myData)
+    val sel = svg.selectAll("rect").data(jsArray)
     sel.enter()
       .append("rect")
       .attr("x", rectXFun)

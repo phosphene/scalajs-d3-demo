@@ -11,12 +11,23 @@ object BarChartTest extends TestSuite {
     'BarChart {
       val barChart = new BarChart
       val barMap = Map("barWidth" -> "450")
+
+      // the data is in the form of a generic sequence
+      // The Seq trait represents sequences.
+      // A sequence is a kind of iterable that has a length
+      //  and whose elements have fixed index positions, starting from 0.
       val scSeq = Seq(24,25,35,36)
-      // Seq to js.Array -- Copy to js.Array
-      val jsArray: js.Array[Int] = scSeq.toJSArray
-      val sel = barChart.buildChart(jsArray, barMap)
+
+      //build a chart with data and with barMap provisos
+      //barMap is not utiilized yet
+      val sel = barChart.buildChart(scSeq, barMap)
+
+      //find all my bars
       val actual = dom.document.querySelectorAll("rect")
-      assert(actual.length == 4)
+
+      //how many bars do I have in my chart?
+      //I should have same as sequence length
+      assert(actual.length == scSeq.length)
 
     }
   }
