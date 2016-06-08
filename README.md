@@ -3,14 +3,14 @@
 Demonstration of Test informed development of a Scala.js d3 facade application
 
 
-This is currently a skeleton based upon a fork of https://github.com/spaced/scala-js-d3-example-app
+This demo is based upon a fork of https://github.com/spaced/scala-js-d3-example-app
 
 
-The most felicitous way in to understanding this simple demo is this simple test
+The most felicitous way in to understanding this simple demo is a simple test
 
     $ sbt test
 
-https://github.com/phosphene/scalajs-d3-demo/blob/master/src/test/scala/example/BarChartTest.scala
+some test code with comments is in [a test](/src/test/scala/example/BarChartTest.scala)
 
 
 one can also run
