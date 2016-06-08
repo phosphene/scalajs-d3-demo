@@ -15,7 +15,7 @@ some test code with comments is in [a test](/src/test/scala/example/BarChartTest
 
 one can also run
 
-    $ sbt fastOptjs
+    $ sbt fastOptJS
 
 And when loading the repo [index page](index.html) in your browser you should see the results of the data defined in [main](src/main/scala/example/ScalaJSChart.scala)
 
