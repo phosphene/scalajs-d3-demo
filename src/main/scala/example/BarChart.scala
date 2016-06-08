@@ -7,12 +7,13 @@ import js.JSConverters._
 
 class BarChart {
 
+ //takes a sequence of data and a map of bar info
   def buildChart(myData: Seq[Int], barData: Map[String, String] ) : Object = {
-
-
     // Seq to js.Array -- Copy to js.Array
     val jsArray: js.Array[Int] = myData.toJSArray
 
+    //bar info is currently hardcoded
+    //to do: make it dynamic
     val graphHeight = 450
     //The width of each bar.
     val barWidth = 80
@@ -36,7 +37,8 @@ class BarChart {
     val rectYFun = (d: Int) => graphHeight - d * barHeightMultiplier
     val rectHeightFun = (d: Int) => d * barHeightMultiplier
     val rectColorFun = (d: Int, i: Int) => c.brighter(i * 0.5).toString
-    //here lies d3 reasoning
+   //now we are ready for d3
+   //here lies d3 reasoning
     val svg = d3.select("body").append("svg").attr("width", "100%").attr("height", "450px")
     val sel = svg.selectAll("rect").data(jsArray)
     sel.enter()
